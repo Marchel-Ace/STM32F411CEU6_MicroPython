@@ -9,14 +9,9 @@ class WS2812:
     Driver for WS2812 RGB LEDs. May be used for controlling single LED or chain
     of LEDs.
     Example of use:
-        chain = WS2812(spi_bus=1, led_count=4)
-        data = [
-            (255, 0, 0),    # red
-            (0, 255, 0),    # green
-            (0, 0, 255),    # blue
-            (85, 85, 85),   # white
-        ]
-        chain.show(data)
+        chain = WS2812(spi_bus=1, led_count=16) #led_count must be filled
+        chain.led[0] = (255,0,0) #Turn Led 0 into Red 
+        chain.show() #Show 
     Version: 1.0
     """
     buf_bytes = (0x88, 0x8e, 0xe8, 0xee)
